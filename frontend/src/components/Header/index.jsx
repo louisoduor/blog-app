@@ -8,7 +8,10 @@ import { useToken } from "../../Hooks/useToken";
 import { useSelector, useDispatch } from "react-redux";
 import { verifyUser } from "../../api/api";
 import { removeLogin, setLogin } from "../../Store/Reducer/LoginSlice";
-import { Profile } from "../Profile";
+// import { Profile } from "../Profile";
+import Profile from "../Profile";
+
+
 import { deleteToken } from "../../utils/storetoken";
 import { VerifyHeader } from "../VerifyHeader";
 import { SearchBar } from "../SearchBar";

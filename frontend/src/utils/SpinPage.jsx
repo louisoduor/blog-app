@@ -1,8 +1,8 @@
 import { useEffect, useState } from "react";
 import { test } from "../api/api";
 import Prop from "prop-types";
-import Spinner from "../components/Spinner";
-import { ServiceError } from "../components/ServiceError";
+import Spinner from "../components/Page/Spinner";
+import { ServiceError } from "../components/Page/ServiceError";
 
 export const SpinPage = ({ children }) => {
   const [isLoading, setLoading] = useState(false);
