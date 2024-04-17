@@ -6,7 +6,7 @@ import { useTitle } from "../../Hooks/useTitle";
 import { useToken } from "../../Hooks/useToken";
 import { useFormik } from "formik";
 import { change_Schema } from "../../Schemas/scheme";
-import { changePassword } from "../../api";
+import { changePassword } from "../../api/api";
 import { toast } from "react-toastify";
 import { PleaseWait } from "../../components/Page/PleaseWait";
 

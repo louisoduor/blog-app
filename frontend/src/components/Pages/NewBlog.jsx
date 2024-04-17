@@ -6,7 +6,7 @@ import { Taglist } from "../../components/Page/TagList";
 import { CircularProgress, TextField, Tooltip } from "@mui/material";
 import { useToken } from "../../Hooks/useToken";
 import { AiOutlineExclamationCircle } from "react-icons/ai";
-import { newBlog } from "../../api";
+import { newBlog } from "../../api/api";
 import { toast } from "react-toastify";
 import { useNavigate } from "react-router-dom";
 import { DialogComponent } from "../../components/Page/DialogComponet";

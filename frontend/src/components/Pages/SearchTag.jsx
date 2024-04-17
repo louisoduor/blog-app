@@ -2,7 +2,7 @@ import { useState } from "react";
 import { LoadingPlaceHolder } from "../Page/LoadingPlaceHolder";
 import { useSearchParams } from "react-router-dom";
 import { useEffect } from "react";
-import { searchTags } from "../../api";
+import { searchTags } from "../../api/api";
 import { Tags } from "../Page/Tags";
 import { ServiceError } from "../Page/ServiceError";
 

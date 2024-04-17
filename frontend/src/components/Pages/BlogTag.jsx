@@ -4,7 +4,7 @@ import { useCallback, useEffect, useState } from "react";
 
 import Spinner from "../Page/Spinner";
 
-import { searchByTag } from "../Pages/SearchTag";
+import { searchByTag } from "../../api/api";
 import { BlogCards } from "../Page/BlogCards";
 
 import LoadMoreButton from "../Page/LoadMoreButton";

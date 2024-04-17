@@ -1,7 +1,7 @@
 import { useParams } from "react-router-dom";
 import { useEffect } from "react";
 import { useState } from "react";
-import { viewBlog } from "../../api";
+import { viewBlog } from "../../api/api";
 import Spinner from "../../components/Page/Spinner";
 import { Error } from "./Error";
 import { BlogView } from "../../components/Page/BlogView";

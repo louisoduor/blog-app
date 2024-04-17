@@ -2,7 +2,7 @@ import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 
 import Spinner from "../Page/Spinner";
-import { getAuthorData } from "../../api";
+import { getAuthorData } from "../../api/api";
 import { Error } from "./Error";
 import { useTitle } from "../../Hooks/useTitle";
 import { getImageURL } from "../../utils/imageurl";

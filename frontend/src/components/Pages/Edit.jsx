@@ -7,7 +7,7 @@ import { Error } from "./Error";
 import { useTitle } from "../../Hooks/useTitle";
 import { useToken } from "../../Hooks/useToken";
 import { toast } from "react-toastify";
-import { updateBlog, viewBlog } from "../../api";
+import { updateBlog, viewBlog } from "../../api/api";
 import { GrUpdate } from "react-icons/gr";
 import { Loading } from "./NewBlog";
 import { Close, Upload } from "@mui/icons-material";

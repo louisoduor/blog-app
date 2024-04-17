@@ -12,7 +12,7 @@ import { getImageURL } from "../../utils/imageurl";
 import { toast } from "react-toastify";
 import { useToken } from "../../Hooks/useToken";
 import { Upload } from "@mui/icons-material";
-import { updateProfile } from "../../api";
+import { updateProfile } from "../../api/api";
 import { DialogComponent } from "../../components/Page/DialogComponet";
 import { TbEditCircle } from "react-icons/tb";
 import useProfile from "../../Hooks/useProfile";

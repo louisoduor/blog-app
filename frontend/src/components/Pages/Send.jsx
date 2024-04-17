@@ -1,7 +1,7 @@
 import { useSelector } from "react-redux";
 import "animate.css";
 import { useToken } from "../../Hooks/useToken";
-import { sendEmail } from "../../api";
+import { sendEmail } from "../../api/api";
 import { toast } from "react-toastify";
 import { useNavigate } from "react-router-dom";
 import { useTitle } from "../../Hooks/useTitle";

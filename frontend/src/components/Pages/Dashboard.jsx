@@ -3,7 +3,7 @@ import { useTitle } from "../../Hooks/useTitle";
 import { useNavigate } from "react-router-dom";
 import { useToken } from "../../Hooks/useToken";
 import Spinner from "../../components/Page/Spinner";
-import { getUserBlogs } from "../../api";
+import { getUserBlogs } from "../../api/api";
 import { Add } from "@mui/icons-material";
 import { Pagination } from "@mui/material";
 import { BlogCards } from "../../components/Page/BlogCards";

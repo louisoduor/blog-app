@@ -13,7 +13,7 @@ import { AccountCircle, Visibility, VisibilityOff } from "@mui/icons-material";
 import { useState } from "react";
 import { useFormik } from "formik";
 import { forgot_Schema } from "../../Schemas/scheme";
-import { forgotPassword } from "../../api";
+import { forgotPassword } from "../../api/api";
 import { toast } from "react-toastify";
 import { useNavigate } from "react-router-dom";
 

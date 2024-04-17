@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import { LoadingPlaceHolder } from "../Page/LoadingPlaceHolder";
 
-import { searchAuthors } from "../../api";
+import { searchAuthors } from "../../api/api";
 import { useSearchParams } from "react-router-dom";
 import { ProfileCards } from "../Page/ProfileCards";
 import { useCallback } from "react";

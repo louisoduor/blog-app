@@ -3,7 +3,7 @@ import { useCallback, useState } from "react";
 import { LoadingPlaceHolder } from "../Page/LoginPlaceHolder";
 import { useEffect } from "react";
 import { useSearchParams } from "react-router-dom";
-import { searchBlogs } from "../../api";
+import { searchBlogs } from "../../api/api";
 
 import { BlogCards } from "../Page/BlogCards";
 import LoadMoreButton from "../Page/LoadMoreButton";
