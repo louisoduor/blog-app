@@ -105,7 +105,7 @@ export const Profile = () => {
               sx={{ height: 40, bgcolor: "#f5f7fc" }}
             >
               <span className="font-spec text-sm select-none">
-                Manage Bloogo
+                Manage AllPulse
               </span>
             </ListSubheader>
           }

@@ -1,118 +1,89 @@
-from datetime import date
-from pydantic import BaseModel, EmailStr, Field
-from datetime import datetime
+from datetime import datetime, date
+from typing import List
 from enum import Enum
 
+from flask_sqlalchemy import SQLAlchemy
 
-class Sort(str, Enum):
+db = SQLAlchemy()
+
+class Sort(Enum):
     NEWEST = "newest"
     OLDEST = "oldest"
 
+class TagsList(db.Model):
+    id = db.Column(db.Integer, primary_key=True)
+    total_tags = db.Column(db.Integer)
+    tags = db.Column(db.ARRAY(db.String))
 
-class TagsList(BaseModel):
-    total_tags: int = Field(examples=[12], description="Total Number of Tags")
-    tags: list[str] = Field(
-        examples=[["c++", "python"]], description="All tags in a List"
-    )
+class Token(db.Model):
+    id = db.Column(db.Integer, primary_key=True)
+    message = db.Column(db.String)
+    Access_Token = db.Column(db.String)
 
+class General(db.Model):
+    id = db.Column(db.Integer, primary_key=True)
+    message = db.Column(db.String)
 
-class Token(BaseModel):
-    message: str = Field(description="Login Success", examples=["Login Success"])
-    Access_Token: str = Field(
-        description="JWT Access Token", examples=["dfdksksfd jflkddfs"]
-    )
+class HelpMessage(db.Model):
+    id = db.Column(db.Integer, primary_key=True)
+    message = db.Column(db.String)
+    help = db.Column(db.String)
 
+class BlogModel(db.Model):
+    id = db.Column(db.String, primary_key=True)
+    title = db.Column(db.String)
+    thumbnail = db.Column(db.String)
+    content = db.Column(db.String)
+    createdon = db.Column(db.DateTime, default=datetime.now)
+    tag = db.Column(db.String)
+    name = db.Column(db.String)
+    authorid = db.Column(db.String)
 
-class General(BaseModel):
-    message: str = Field(
-        description="Used to show any general message", examples=["Success"]
-    )
+class BlogData(db.Model):
+    id = db.Column(db.Integer, primary_key=True)
+    Total_Blogs = db.Column(db.Integer)
+    blogs = db.relationship('BlogModel', backref='blog_data', lazy=True)
 
+class RegisterModel(db.Model):
+    id = db.Column(db.Integer, primary_key=True)
+    email = db.Column(db.String)
+    password = db.Column(db.String)
+    isverified = db.Column(db.Boolean, default=False)
+    createdon = db.Column(db.Date, default=date.today)
 
-class HelpMessage(General):
-    help: str = Field(
-        description="Used to Show any Help Message",
-        examples=["use login to get Access"],
-    )
+class UserModel(db.Model):
+    id = db.Column(db.Integer, primary_key=True)
+    firstname = db.Column(db.String)
+    lastname = db.Column(db.String)
+    dob = db.Column(db.Date)
+    profileurl = db.Column(db.String)
 
+class ProfileModel(db.Model):
+    id = db.Column(db.Integer, primary_key=True)
+    email = db.Column(db.String)
+    isverified = db.Column(db.Boolean, default=False)
+    createdon = db.Column(db.Date, default=date.today)
+    firstname = db.Column(db.String)
+    lastname = db.Column(db.String)
+    dob = db.Column(db.Date)
+    profileurl = db.Column(db.String)
 
-class BlogModel(BaseModel):
-    id: str = Field(description="An Unique id of an Blog", examples=["dfer993nbnaie"])
-    title: str = Field(description="Blog Title", examples=["How to maximize Fast API"])
-    thumbnail: str = Field(
-        description="Blog Thumbnail URL", examples=["https://www.giphy.com/defualt.png"]
-    )
-    content: str = Field(description="An Blog Content in HTML Format")
-    createdon: datetime = Field(description="Blog created Date", default=datetime.now())
-    tag: str = Field(description="Tag name for the Blog", examples=["Python"])
-    name: str = Field(
-        description="Author Name which added the blog", examples=["John Kevlar"]
-    )
-    authorid: str = Field(description="Author id")
+class AuthorModel(db.Model):
+    id = db.Column(db.Integer, primary_key=True)
+    email = db.Column(db.String)
+    isverified = db.Column(db.Boolean, default=False)
+    createdon = db.Column(db.Date, default=date.today)
+    firstname = db.Column(db.String)
+    lastname = db.Column(db.String)
+    dob = db.Column(db.Date)
+    profileurl = db.Column(db.String)
 
+class AuthorList(db.Model):
+    id = db.Column(db.Integer, primary_key=True)
+    total = db.Column(db.Integer)
+    authors = db.relationship('AuthorModel', backref='author_list', lazy=True)
 
-class BlogData(BaseModel):
-    Total_Blogs: int = Field(description="Total number of Blogs", examples=[6])
-    blogs: list[BlogModel] = Field(description="List of Blogs")
-
-
-class RegisterModel(BaseModel):
-    email: EmailStr = Field(
-        description="Email to register the User", examples=["user@gmail.com"]
-    )
-    password: str = Field(description="Password", examples=["johnny@12"])
-    isverified: bool = False
-    createdon: date = datetime.now().date()
-
-
-class UserModel(BaseModel):
-    firstname: str = Field(
-        description="First Name for the User", examples=["John"], default=None
-    )
-    lastname: str = Field(
-        description="Last Name of the User", examples=["Kevlar"], default=None
-    )
-    dob: date = Field(
-        description="User's Date of Birth", examples=["2003-04-22"], default=None
-    )
-    profileurl: str | None = Field(
-        description="Profile picture url of the User",
-        examples=["https://www.facebook.com/mother.png"],
-        default=None,
-    )
-
-
-class ProfileModel(BaseModel):
-    email: EmailStr = Field(
-        description="Email to register the User", examples=["user@gmail.com"]
-    )
-    isverified: bool = False
-    createdon: date
-    firstname: str = Field(
-        description="First Name for the User", examples=["John"], default=None
-    )
-    lastname: str = Field(
-        description="Last Name of the User", examples=["Kevlar"], default=None
-    )
-    dob: date = Field(
-        description="User's Date of Birth", examples=["2003-04-22"], default=None
-    )
-    profileurl: str | None = Field(
-        description="Profile picture url of the User",
-        examples=["https://www.facebook.com/mother.png"],
-        default=None,
-    )
-
-
-class AuthorModel(ProfileModel):
-    id: str = Field(description="ID of an Author", examples=["dhffkdhjse"])
-
-
-class AuthorList(BaseModel):
-    total: int = Field(description="Total Author List", examples=[3])
-    authors: list[AuthorModel]
-
-
-class AuthorProfile(BaseModel):
-    profile: ProfileModel
-    blogs: BlogData
+class AuthorProfile(db.Model):
+    id = db.Column(db.Integer, primary_key=True)
+    profile = db.relationship('ProfileModel', uselist=False, backref='author_profile')
+    blogs = db.relationship('BlogData', backref='author_profile', lazy=True)

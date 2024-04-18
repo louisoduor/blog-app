@@ -12,7 +12,7 @@ export const Home = () => {
       <div className="mt-20">
         <div className="flex justify-center items-center flex-col gap-12">
           <h1 className="">
-            <img src="/icon.png" alt="Bloogo Icon" className="w-80" />
+            <img src="/logo.png" alt="logo Icon" className="w-32" />
           </h1>
           <span className="text-xl sm:text-3xl font-lum">
             Yours Words We Posts.
@@ -29,9 +29,9 @@ export const Home = () => {
             Express Your Thoughts Through writing here.
           </span>
         </div>
-        <hr className="h-1 bg-gray-300 mt-10 sm:mt-14 md:mt-24 lg:mt-40 xl:mt-48 mx-16" />
+        <hr className="h-1 bg-gray-300 mt-5 sm:mt-14 md:mt-24 lg:mt-30 xl:mt-20 mx-16" />
       </div>
-      <div className="mt-7 mx-10 lg:mx-60">
+      <div className="mt-4 mx-10 lg:mx-60">
         {HeaderData.map((value, index) => {
           return (
             <HeaderCard
@@ -39,7 +39,6 @@ export const Home = () => {
               content1={value.content1}
               content2={value.content2}
               title={value.title}
-              image={value.image}
             />
           );
         })}

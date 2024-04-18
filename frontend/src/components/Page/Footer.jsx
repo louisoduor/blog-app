@@ -1,24 +1,24 @@
 import { Link } from "react-router-dom";
 import { NavLink } from "react-router-dom";
-import { GitHub, LinkedIn, Instagram, Favorite } from "@mui/icons-material";
+import { GitHub, LinkedIn, Instagram } from "@mui/icons-material";
 import Tooltip from "@mui/material/Tooltip";
 
 const IconsFooter = [
   {
     icon: <GitHub key={0} style={{ fontSize: 30 }} />,
-    link: "https://github.com/PrathameshDhande22/Bloogo-App",
+    link: "https://github.com/james-mbuvi/blog-app",
     classname: "github",
     title: "Github",
   },
   {
     icon: <LinkedIn key={1} style={{ fontSize: 30 }} />,
-    link: "https://www.linkedin.com/in/prathamesh-dhande-3a039721a/",
+    link: "",
     classname: "linkedin",
     title: "LinkedIn",
   },
   {
     icon: <Instagram key={2} style={{ fontSize: 30 }} />,
-    link: "https://instagram.com/prathameshdhande5139",
+    link: "",
     classname: "insta",
     title: "Instagram",
   },
@@ -30,9 +30,9 @@ const Footer = () => {
       <div className="flex justify-center items-center gap-4 flex-col flex-wrap md:gap-8">
         <NavLink to={"/"}>
           <img
-            src="/straightlogo.png"
-            alt="bloogo icon"
-            className="w-40 md:w-48"
+            src="/logo.png"
+            alt="icon"
+            className="w-32 md:w-32"
           />
         </NavLink>
         <div className="flex flex-row justify-center items-center gap-6 md:gap-10 text-base md:text-lg uppercase font-thin font-gara flex-wrap text-indigo-600 ">
@@ -72,12 +72,7 @@ const Footer = () => {
       </div>
       <div className="flex flex-col flex-wrap justify-center items-center gap-2 mx-3 text-base">
         <span>Copyright © 2024 All rights reserved</span>
-        <span>
-          Made with <Favorite style={{ color: "red", fontSize: 18 }} /> by{" "}
-          <a href={IconsFooter[0].link} className="text-indigo-600">
-            Prathamesh Dhande
-          </a>
-        </span>
+
       </div>
     </footer>
   );

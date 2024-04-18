@@ -32,7 +32,7 @@ export const SearchBar = () => {
         </button>
         <input
           type="text"
-          placeholder="Search Bloogo"
+          placeholder="Search"
           className="border-none w-full text-black bg-gray-100 outline-none py-1"
           onChange={(e) => {
             setSearchValue(e.target.value);

@@ -5,6 +5,6 @@
  * @returns title that setted for the page.
  */
 export const useTitle = (title) => {
-  document.title = `${title} - Bloogo`;
+  document.title = `${title} - AllPulse Blog`;
   return title;
 };

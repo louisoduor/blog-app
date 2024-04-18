@@ -31,7 +31,7 @@ export const login_Schema = yup.object({
     .max(16, "Password must contains at most 16 Characters")
     .required("Enter Valid Password")
     .matches(
-      /^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[!@#\$%\^&\*])(?=.{8,})/, //eslint-disable-line
+      /^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[!@#\$%\^&\*])(?=.{8,})/, 
       "Must Contain 8 Characters, One Uppercase, One Lowercase, One Number and One Special Case Character"
     ),
 });
